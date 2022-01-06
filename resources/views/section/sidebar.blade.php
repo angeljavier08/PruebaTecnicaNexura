@@ -32,6 +32,15 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+          <li class="nav-item">
+            <a href="{{Route("home")}}" class="nav-link {{ !Route::is("home") ?: 'active'}}">
+              <i class="nav-icon fa fa-home" aria-hidden="true"></i>
+              <p>
+                Inicio
+              </p>
+            </a>
+          </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i aria-hidden="true" class="nav-icon fas fa-users"></i>
@@ -55,6 +64,8 @@
             </ul>
           </li>
         </ul>
+
+        
       </nav>
       <!-- /.sidebar-menu -->
     </div>
