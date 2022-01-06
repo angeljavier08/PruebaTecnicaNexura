@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmpleadoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,15 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::resource('compradores', 'CompradoreController');
-
-
-Route::get('/home', function () {
-    return view('empleado.index');
-})->name('home');
-
+Route::resource('empleados', EmpleadoController::class);
+Route::get('/api/empleados', [EmpleadoController::class, 'getListarEmpleados']);
 
 
 Route::get('/', function () {
-    return view('empleado.index');
-});
+    return view('home');
+})->name("home");

@@ -41,8 +41,8 @@
               </p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
+          <li class="nav-item  {{ !Route::is("empleados*") ?: 'menu-open'}}">
+            <a href="#" class="nav-link {{ !Route::is("empleados*") ?: 'active'}}">
               <i aria-hidden="true" class="nav-icon fas fa-users"></i>
               <p>
                 Empleados
@@ -51,14 +51,14 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../../index.html" class="nav-link">
-                  <i aria-hidden="true" class="fa fa-plus nav-icon"></i>
+                <a href="{{Route("empleados.index")}}" class="nav-link {{ !Route::is("empleados.index") ?: 'active'}}">
+                  <i aria-hidden="true" class="fa fa-list nav-icon"></i>
                   <p>Listado</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../../index2.html" class="nav-link">
-                  <i  aria-hidden="true" class="fa fa-list nav-icon"></i>
+                <a href="{{Route("empleados.create")}}" class="nav-link {{ !Route::is("empleados.create") ?: 'active'}}">
+                  <i  aria-hidden="true" class="fa fa-plus nav-icon"></i>
                   <p>Crear</p>
                 </a>
             </ul>

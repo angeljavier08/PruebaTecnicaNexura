@@ -14,6 +14,8 @@ class CreateEmpleadoRolTable extends Migration
     public function up()
     {
         Schema::create('empleado_rol', function (Blueprint $table) {
+            $table->increments('id');
+
             $table->unsignedInteger('empleado_id');
             $table->unsignedInteger('rol_id');
 
