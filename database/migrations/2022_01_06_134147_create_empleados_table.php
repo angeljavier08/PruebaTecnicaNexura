@@ -14,21 +14,22 @@ class CreateEmpleadosTable extends Migration
     public function up()
     {
         Schema::create('empleados', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('nombres', 255);
             $table->string('email')->unique();
             $table->char('sexo', 1);
-            $table->unsignedInteger('area_id');
-            $table->integer('boletin', 11)->nullable();
+            $table->integer('boletin')->nullable();
             $table->text('descripcion');
+            $table->unsignedInteger('area_id');
 
 
             $table->foreign('area_id')
                 ->references('id')
                 ->on('areas')
                 ->onDelete('cascade');
-            $table->softDeletes();
 
+
+            $table->softDeletes();
             $table->timestamps();
         });
     }
